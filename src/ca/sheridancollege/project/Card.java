@@ -18,11 +18,24 @@ package ca.sheridancollege.project;
  */
 
 
+
+
+/*
+
+    Design principle used:
+
+    This class follows the Single Responsibility Principle (SRP) by only representing card attributes.
+
+*/
+
+
+
+
+
+
+
 // The public class name card is created which represents the playing cards with specific rank and suits.
 public class Card {
-    
-    //These fields store the rank and suit of the card and is declared final because they are immutable 
-    // once set to constructor.
     private final Rank rank;
     private final Suit suit;
 
@@ -50,8 +63,7 @@ public class Card {
         return rank + " of " + suit;
     }
 
-    
-    // these enums are used to describe the possible ranks and suits of the card.
+    // Enums for Rank and Suit
     public enum Rank {
         TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE
     }

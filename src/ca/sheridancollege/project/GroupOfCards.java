@@ -22,7 +22,15 @@ import java.util.Collections;
 import java.util.List;
 
 
-// This is a public class which has list of cards as cards.
+
+/*
+    Design Pattern and Principle used:
+
+    GroupOfCards class manages a collection of cards (deck).
+    Follows Single Responsibility Principle and uses the Factory pattern to create Card instances.
+*/
+
+
 public class GroupOfCards {
     private final List<Card> cards;
 
@@ -34,11 +42,12 @@ public class GroupOfCards {
         shuffleDeck();
     }
 
+    
     // This method is used to initialize deck of cards
     private void initializeDeck() {
         for (Card.Suit suit : Card.Suit.values()) {
             for (Card.Rank rank : Card.Rank.values()) {
-                cards.add(new Card(rank, suit));
+                cards.add(CardFactory.createCard(rank, suit));
             }
         }
     }
@@ -58,7 +67,6 @@ public class GroupOfCards {
         return null;
     }
 
-    
     public int size() {
         return cards.size();
     }
